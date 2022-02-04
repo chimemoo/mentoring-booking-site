@@ -1,0 +1,10 @@
+.next/
+.serverless/
+.serverless_nextjs/
+
+node_modules/
+public/
+
+yarn.lock
+
+/**/*.d.ts
