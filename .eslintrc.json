@@ -31,6 +31,8 @@
             }
         ],
         "react/function-component-definition": "off",
-        "arrow-body-style": "off"
+        "arrow-body-style": "off",
+        "import/extensions": "off",
+        "import/no-unresolved": "off"
     }
 }
