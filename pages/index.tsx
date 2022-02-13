@@ -1,17 +1,37 @@
-import type { NextPage } from 'next';
+import { useSession, getSession } from 'next-auth/react';
 import Head from 'next/head';
 import HomeComponent from '../features/home';
 
-const Home: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <title>Book Mentoring Session</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <HomeComponent />
-    </>
-  );
-};
+export default function Home() {
+  const { data: session } = useSession();
 
-export default Home;
+  if (session) {
+    return (
+      <>
+        <Head>
+          <title>Book Mentoring Session</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        </Head>
+        <HomeComponent />
+      </>
+    );
+  }
+}
+
+export async function getServerSideProps(context: any) {
+  const data = await getSession(context);
+
+  if (data?.user) {
+    return {
+      props: {
+        session: data,
+      },
+    };
+  }
+  return {
+    redirect: {
+      permanent: false,
+      destination: '/login',
+    },
+  };
+}

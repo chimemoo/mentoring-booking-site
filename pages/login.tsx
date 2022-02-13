@@ -7,16 +7,9 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { useSession, signIn } from 'next-auth/react';
-import Router from 'next/router';
+import { signIn, getSession } from 'next-auth/react';
 
 export default function SignupCard() {
-  const { data: session } = useSession();
-
-  if (session) {
-    return Router.push('/');
-  }
-
   return (
     <Flex
       minH="100vh"
@@ -59,4 +52,20 @@ export default function SignupCard() {
       </Stack>
     </Flex>
   );
+}
+
+export async function getServerSideProps(context: any) {
+  const data = await getSession(context);
+
+  if (data?.user) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/',
+      },
+    };
+  }
+  return {
+    props: {},
+  };
 }
