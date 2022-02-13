@@ -96,7 +96,6 @@ export default function Home() {
           boxShadow="lg"
           className="hola"
           p={[2, 4, 8]}
-          w="sm"
         >
           <FormControl id="sessionType" isRequired pb="4">
             <FormLabel>Select Session Type</FormLabel>
