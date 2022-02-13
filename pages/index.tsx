@@ -1,21 +1,17 @@
-import { useSession, getSession } from 'next-auth/react';
+import { getSession } from 'next-auth/react';
 import Head from 'next/head';
 import HomeComponent from '../features/home';
 
 export default function Home() {
-  const { data: session } = useSession();
-
-  if (session) {
-    return (
-      <>
-        <Head>
-          <title>Book Mentoring Session</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        </Head>
-        <HomeComponent />
-      </>
-    );
-  }
+  return (
+    <>
+      <Head>
+        <title>Book Mentoring Session</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <HomeComponent />
+    </>
+  );
 }
 
 export async function getServerSideProps(context: any) {

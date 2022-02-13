@@ -13,7 +13,7 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useRouter } from 'next/router';
@@ -139,6 +139,18 @@ export default function Home() {
             disabled={!isCanSubmited}
             onClick={onSubmit}
           >BOOKING
+          </Button>
+          <Button
+            colorScheme="red"
+            display="block"
+            w="full"
+            mt="5"
+            variant="ghost"
+            onClick={() => {
+              signOut();
+              router.push('/login');
+            }}
+          >Sign Out
           </Button>
         </Box>
       </Stack>
