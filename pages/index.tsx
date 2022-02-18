@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Book Mentoring Session</title>
+        <title>Book Mentoring Session | Bookmytime</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <HomeComponent />

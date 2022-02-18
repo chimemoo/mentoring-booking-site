@@ -32,7 +32,21 @@ function SessionAvailability({ date, selected, onSelect }: SessionAvailabilityPr
       </Flex>
     );
   }
-  if (isError) return <p>Error</p>;
+  if (isError) {
+    return (
+      <div>
+        <Text>Server Error</Text>
+        <Button
+          display="inline-block"
+          colorScheme="twitter"
+          variant="link"
+          onClick={() => onSelect(date)}
+        >
+          Reload
+        </Button>
+      </div>
+    );
+  }
 
   if (session.length === 0) {
     return <Text>No Session available in {date.toDateString()}</Text>;

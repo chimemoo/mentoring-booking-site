@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { signIn, getSession } from 'next-auth/react';
+import Head from 'next/head';
 
 export default function SignupCard() {
   return (
@@ -17,6 +18,9 @@ export default function SignupCard() {
       justify="center"
       bg={useColorModeValue('gray.50', 'gray.800')}
     >
+      <Head>
+        <title>Login | Bookmytime</title>
+      </Head>
       <Stack spacing={8} mx="auto" maxW="lg" py={12} px={6}>
         <Stack align="center">
           <Heading fontSize="4xl" textAlign="center">

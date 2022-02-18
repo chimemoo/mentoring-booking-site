@@ -20,7 +20,7 @@ export default function Success() {
       bg={useColorModeValue('gray.50', 'gray.800')}
     >
       <Head>
-        <title>Booking Success</title>
+        <title>Booking Success | Bookmytime</title>
       </Head>
       <Stack spacing={8} mx="auto" maxW="8xl" py={12}>
         <Box
