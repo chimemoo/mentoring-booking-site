@@ -102,6 +102,7 @@ export default function Home() {
 
             <Select size="md" onChange={(e) => setType(e.target.value)}>
               <option value="1on1">1 On 1</option>
+              <option value="1on2">1 On 2</option>
               <option value="1on3">1 On 3</option>
             </Select>
           </FormControl>
