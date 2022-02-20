@@ -26,7 +26,7 @@ export default function Home() {
   const toast = useToast();
   const { data: session } = useSession();
   const router = useRouter();
-  const [type, setType] = useState <any>('1on1');
+  const [type, setType] = useState <any>('1on2');
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState <any>(null);
   const [emails, setEmails] = useState< any >([]);
@@ -101,9 +101,9 @@ export default function Home() {
             <FormLabel>Select Session Type</FormLabel>
 
             <Select size="md" onChange={(e) => setType(e.target.value)}>
-              <option value="1on1">1 On 1</option>
+              {/* <option value="1on1">1 On 1</option> */}
               <option value="1on2">1 On 2</option>
-              <option value="1on3">1 On 3</option>
+              {/* <option value="1on3">1 On 3</option> */}
             </Select>
           </FormControl>
           <FormControl id="date" isRequired pb="4">
