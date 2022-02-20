@@ -141,19 +141,24 @@ export default function Home() {
             onClick={onSubmit}
           >BOOKING
           </Button>
+        </Box>
+        <Stack align="center">
+          <Text fontSize="sm" color="gray.600">
+            You signin as {session?.user?.email}
+          </Text>
           <Button
             colorScheme="red"
             display="block"
             w="full"
             mt="5"
-            variant="ghost"
+            variant="link"
             onClick={() => {
               signOut();
               router.push('/login');
             }}
           >Sign Out
           </Button>
-        </Box>
+        </Stack>
       </Stack>
     </Flex>
   );
