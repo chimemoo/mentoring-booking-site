@@ -44,7 +44,7 @@ export default function Home() {
         date: dayjs(date).format('YYYY-MM-DD'),
         hourStart: time.hourStart,
         hourEnd: time.hourEnd,
-        otherMail: type === '1on3' ? emails : [],
+        otherMail: type !== '1on1' ? emails : [],
       }),
     })
       .then((response) => response.json())
@@ -72,7 +72,7 @@ export default function Home() {
 
   const isCanSubmited = type
       && time
-      && (type === '1on3' ? emails.length > 0 : true);
+      && (type !== '1on1' ? emails.length > 0 : true);
 
   return (
     <Flex
@@ -122,7 +122,7 @@ export default function Home() {
               onSelect={setTime}
             />
           </FormControl>
-          {type === '1on3' && (
+          {type !== '1on1' && (
           <FormControl id="email" isRequired pb="4">
             <FormLabel>Type Other Member Email</FormLabel>
             <OtherEmail emails={emails} setEmails={setEmails} />
