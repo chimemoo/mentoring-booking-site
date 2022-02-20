@@ -37,7 +37,7 @@ export default function Success() {
               Success
             </Heading>
             <Text color="gray.500" w="">
-              Session successfully booked, please check your email
+              Session successfully booked, you will be invited to google calendar ASAP
             </Text>
             <br />
             <Link href="/" passHref>

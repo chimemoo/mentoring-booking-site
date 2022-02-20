@@ -127,7 +127,7 @@ export default function Home() {
             <FormLabel>Type Other Member Email</FormLabel>
             <OtherEmail emails={emails} setEmails={setEmails} />
             <FormHelperText>
-              You can write up to 2 email
+              You can write up to 2 email. (Type Enter to add emails)
             </FormHelperText>
           </FormControl>
           )}
